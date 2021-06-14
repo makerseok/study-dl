@@ -25,6 +25,7 @@ class Exam(QWidget, form_window):
         # 클릭 시그널이 발생하면 predict_image 함수 실행
         self.btn_select.clicked.connect(self.predict_image)
 
+
     def predict_image(self):
         # 윈도우 file chooser 사용해 이미지 파일 선택 / (경로, 선택 타입) 튜플 반환
         self.path = QFileDialog.getOpenFileName(
