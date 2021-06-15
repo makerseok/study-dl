@@ -1,5 +1,6 @@
 """
 Cat and Dog GUI
+tensorflow version: 2.3.0
 """
 import sys
 

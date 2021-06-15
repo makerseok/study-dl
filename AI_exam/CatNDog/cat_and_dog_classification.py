@@ -1,5 +1,6 @@
 """
-cat and dog classification
+Cat and Dog classification
+tensorflow version: 1.14.0
 """
 import numpy as np
 from tensorflow.keras.models import Sequential
@@ -56,7 +57,7 @@ model.compile(loss='binary_crossentropy',
 model.summary()
 
 # 7번 넘게 val_accuracy가 좋아지지 않을 경우 중단
-early_stopping = EarlyStopping(monitor='val_accuracy', patience=7)
+early_stopping = EarlyStopping(monitor='val_acc', patience=7)
 
 # 모델 학습
 fit_hist = model.fit(X_train, Y_train,
@@ -66,7 +67,7 @@ fit_hist = model.fit(X_train, Y_train,
                      callbacks=[early_stopping],
                      )
 # 모델 저장
-model.save('../models/cat_and_dog_binary_classification.h5')
+model.save('../models/cat_and_dog_binary_classification_1_14_0.h5')
 
 # 학습 결과 확인
 score = model.evaluate(X_test, Y_test)
@@ -79,6 +80,6 @@ plt.plot(fit_hist.history['val_loss'], label='val_loss')
 plt.legend()
 plt.subplot(2,1,2)
 plt.plot(fit_hist.history['accuracy'], label='accuracy')
-plt.plot(fit_hist.history['val_accuracy'], label='val_accuracy')
+plt.plot(fit_hist.history['val_acc'], label='val_accuracy')
 plt.legend()
 plt.show()

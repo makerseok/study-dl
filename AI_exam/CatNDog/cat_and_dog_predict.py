@@ -1,5 +1,6 @@
 """
 Cat and Dog model load and predict
+tensorflow version: 1.14.0
 """
 import glob
 
@@ -8,7 +9,7 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 
 # 기존 저장한 모델 로드
-model = load_model('../models/cat_and_dog_binary_classification.h5')
+model = load_model('../models/cat_and_dog_binary_classification_1_14_0.h5')
 print(model.summary())
 
 # 이미지 경로와 크기

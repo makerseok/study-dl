@@ -1,5 +1,6 @@
 """
 Cat and Dog GUI
+tensorflow version: 1.14.0
 """
 import sys
 
@@ -20,7 +21,7 @@ class Exam(QWidget, form_window):
         super().__init__()  # 부모의 생성자 실행
         self.path = None
         self.setupUi(self)
-        self.model = load_model('../models/cat_and_dog_binary_classification.h5')
+        self.model = load_model('../models/cat_and_dog_binary_classification_1_14_0.h5')
         # 클릭 시그널이 발생하면 predict_image 함수 실행
         self.btn_select.clicked.connect(self.predict_image)
 

@@ -1,5 +1,6 @@
 """
 horse or human classification
+tensorflow version: 2.3.0
 """
 import numpy as np
 from tensorflow.keras.models import Sequential
