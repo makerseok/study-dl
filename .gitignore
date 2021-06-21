@@ -4,3 +4,5 @@ datasets/
 __pycache__/
 *.csv
 .vscode/
+*.h5
+*.npy
