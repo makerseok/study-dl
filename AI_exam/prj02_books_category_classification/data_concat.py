@@ -12,22 +12,22 @@ cid_to_cat = {
     "517": "Art_Culture",
     "76001": "Reference_Book",
     "55890": "Health_Hobby_Leisure",
-    "987": "Economic",
+    "987": "Science",
 }
-if __name__ == "__main__":
-    today = time.strftime("%Y-%m-%d", time.localtime(time.time()))
 
-    filenames = glob("./crawling_data/*.csv")
+if __name__ == "__main__":
+    today = "2021-06-18"
+
+    filenames = glob(f"./crawling_data/cid-*{today}.csv")
     get_cid = re.compile("cid-[0-9]+")
     datas = []
 
     for filename in filenames:
-        if today in filename:
-            print(filename)
-            cid = get_cid.search(filename).group()[4:]
-            df = pd.read_csv(filename)
-            df["category"] = cid_to_cat[cid]
-            datas.append(df)
+        print(filename)
+        cid = get_cid.search(filename).group()[4:]
+        df = pd.read_csv(filename)
+        df["category"] = cid_to_cat[cid]
+        datas.append(df)
 
     data = pd.concat(datas, ignore_index=True)
 
